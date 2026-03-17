@@ -1,3 +1,4 @@
+"use client";
 import { Station } from "../types";
 import { StationCard } from "./StationCard";
 import { StationForm } from "./StationForm";

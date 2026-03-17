@@ -1,3 +1,4 @@
+"use client";
 import { Station, Review } from "../types";
 import { Star, MapPin, Tag, ChevronDown, ChevronUp, MessageSquarePlus } from "lucide-react";
 import { useState } from "react";

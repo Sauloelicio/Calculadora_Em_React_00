@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Send, MapPin } from "lucide-react";
 
