@@ -1,65 +1,53 @@
-import Image from "next/image";
+"use client";
+
+import { Calculator } from "../components/Calculator";
+import { StationList } from "../components/StationList";
+import { MOCK_STATIONS } from "../data/mockStations";
+import { Info } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-slate-950 text-slate-100 p-4 md:p-8 selection:bg-emerald-500/30 font-sans pb-20">
+      {/* Background glow effects */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-[400px] bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none opacity-60"></div>
+      
+      <div className="relative max-w-5xl mx-auto z-10 space-y-16">
+        
+        {/* Header */}
+        <header className="text-center mt-8 mb-12">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+            Meu <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Posto</span> Local
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-slate-400 font-medium text-lg max-w-xl mx-auto">
+            Calcule o custo real para o seu carro e descubra os melhores postos na sua região através da comunidade.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </header>
+
+        {/* Section 1: Calculator */}
+        <section className="max-w-xl mx-auto">
+          <Calculator />
+        </section>
+
+        {/* Info Box -> privacy & collaboration info */}
+        <section className="max-w-3xl mx-auto">
+           <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-2xl p-4 flex gap-4 text-indigo-300">
+             <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
+             <div className="text-sm leading-relaxed">
+               <p className="font-semibold mb-1">Como funciona a nossa Comunidade?</p>
+               <p className="opacity-80">
+                 Os postos abaixo refletem análises anônimas enviadas por motoristas como você. 
+                 Nós não rastreamos nomes e garantimos a sua privacidade para que as avaliações sejam criadas de forma segura e honesta.
+               </p>
+             </div>
+           </div>
+        </section>
+
+        {/* Section 2: Social Feed (Stations) */}
+        <section className="pt-8 border-t border-slate-800/60">
+          <StationList stations={MOCK_STATIONS} />
+        </section>
+        
+      </div>
+    </main>
   );
 }
