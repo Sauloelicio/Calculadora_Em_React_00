@@ -2,51 +2,19 @@
 
 import { useState } from "react";
 import { CalculationResult } from "../types";
+import { useCalculator } from "../hooks/useCalculator";
 import { Calculator as CalcIcon, Droplets, Fuel, Car, Navigation } from "lucide-react";
 
 export function Calculator() {
-  const [alcoholPrice, setAlcoholPrice] = useState<string>("");
-  const [gasPrice, setGasPrice] = useState<string>("");
-  const [alcoholConsumption, setAlcoholConsumption] = useState<string>("");
-  const [gasConsumption, setGasConsumption] = useState<string>("");
-  const [tankCapacity, setTankCapacity] = useState<string>("50");
-  
-  const [result, setResult] = useState<CalculationResult | null>(null);
-
-  const calculate = (e: React.FormEvent) => {
-    e.preventDefault();
-    const parse = (val: string) => parseFloat(val.replace(",", "."));
-    
-    const pAlcohol = parse(alcoholPrice);
-    const pGas = parse(gasPrice);
-    const cAlcohol = parse(alcoholConsumption);
-    const cGas = parse(gasConsumption);
-    const tank = parse(tankCapacity);
-
-    if ([pAlcohol, pGas, cAlcohol, cGas, tank].some(v => isNaN(v) || v <= 0)) {
-       // Need all values to be valid
-       return;
-    }
-
-    const costPerKmAlcohol = pAlcohol / cAlcohol;
-    const costPerKmGas = pGas / cGas;
-    
-    const fillTankAlcohol = pAlcohol * tank;
-    const fillTankGas = pGas * tank;
-
-    const isAlcoholBetter = costPerKmAlcohol < costPerKmGas;
-    const difference = Math.abs(fillTankAlcohol - fillTankGas);
-
-    setResult({
-      bestFuel: isAlcoholBetter ? "alcohol" : "gas",
-      message: isAlcoholBetter ? "Etanol é mais vantajoso!" : "Gasolina é mais vantajosa!",
-      costPerKmAlcohol,
-      costPerKmGas,
-      fillTankAlcohol,
-      fillTankGas,
-      differenceToFill: difference
-    });
-  };
+  const {
+    alcoholPrice, setAlcoholPrice,
+    gasPrice, setGasPrice,
+    alcoholConsumption, setAlcoholConsumption,
+    gasConsumption, setGasConsumption,
+    tankCapacity, setTankCapacity,
+    result,
+    calculate
+  } = useCalculator();
 
   return (
     <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 shadow-2xl shadow-emerald-900/10">

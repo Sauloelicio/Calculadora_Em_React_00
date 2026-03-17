@@ -1,8 +1,8 @@
 "use client";
 
-import { Calculator } from "../components/Calculator";
-import { StationList } from "../components/StationList";
-import { MOCK_STATIONS } from "../data/mockStations";
+import { Calculator } from "@/components/Calculator";
+import { StationList } from "@/components/StationList";
+import { MOCK_STATIONS } from "@/data/mockStations";
 import { Info } from "lucide-react";
 
 export default function Home() {
