@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⛽ Posto App - Calculadora Inteligente de Combustível
 
-## Getting Started
+![Capa do Projeto](https://via.placeholder.com/800x400?text=Posto+App+-+Calculadora+de+Combust%C3%ADvel) <!-- Substitua por uma captura de tela real do seu projeto -->
 
-First, run the development server:
+Bem-vindo ao **Posto App**! Este é um projeto focado em entregar uma ótima experiência de usuário (UX/UI) e cálculos precisos para ajudar motoristas a decidirem a melhor opção na hora de abastecer (Álcool vs Gasolina). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Sobre o Projeto
+A aplicação não faz apenas o cálculo básico de 70%. Ela permite inserir o rendimento real (km/l) do seu veículo tanto no etanol quanto na gasolina, trazendo um cálculo inteligente do custo-benefício por quilômetro rodado e o valor total para encher o tanque.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este projeto mostra a evolução de uma simples calculadora para uma futura plataforma colaborativa!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tecnologias Utilizadas
+Abaixo as tecnologias modernas que compõem a stack deste projeto:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Next.js](https://nextjs.org/) (App Router)** - Framework modular e otimizado para React.
+- **[React](https://react.dev/)** - Biblioteca principal para construção de interfaces.
+- **[TypeScript](https://www.typescriptlang.org/)** - Tipagem estática para maior segurança e previsibilidade no código.
+- **[Tailwind CSS](https://tailwindcss.com/)** - Estilização rápida, responsiva e moderna.
+- **[Lucide React](https://lucide.dev/)** - Biblioteca de ícones consistentes.
 
-## Learn More
+## 📂 Estrutura do Projeto
+A arquitetura de diretórios principal dentro da pasta `src/`:
 
-To learn more about Next.js, take a look at the following resources:
+- `/app` - Rotas, layouts e páginas da aplicação.
+- `/components` - Componentes reutilizáveis (Formulários, Cards, Botões, Resultados).
+- `/data` - Mock de informações (como listas de postos fictícios para o feed).
+- `/hooks` - Hooks customizados focados em separar a lógica de negócio (cálculos) da parte visual.
+- `/types` - Tipagens e interfaces TypeScript.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ Como rodar o projeto localmente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Siga estes passos para executar a aplicação na sua máquina:
 
-## Deploy on Vercel
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/SEU_USUARIO/posto-app.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Entre no diretório do projeto:
+   ```bash
+   cd posto-app
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+5. O projeto abrirá no seu navegador no endereço: [http://localhost:3000](http://localhost:3000)
+
+## 🌟 Próximos Passos (Roadmap)
+Planos futuros para a expansão do app:
+- [ ] Listagem de postos de combustíveis locais.
+- [ ] Sistema de tags para os postos (ex: "Bom Atendimento", "Loja de Conveniência").
+- [ ] Compartilhamento de avaliações anônimas.
+
+---
+Feito com 💻 e ☕. Sinta-se livre para explorar o código, fazer um fork e testar na sua máquina!
